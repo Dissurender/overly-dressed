@@ -1,13 +1,13 @@
-import { useState } from 'react';
+//import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 
 
 function SlideShowCarousel() {
-    const [index, setIndex] = useState(0);
+    //const [index, setIndex] = useState(0);
 
-    const handleSelect = (selectedIndex: number, e: any) => {
+    /*const handleSelect = (selectedIndex: number, e: any) => {
         setIndex(selectedIndex);
-    };
+    };*/
 
     return (
         <Carousel>
