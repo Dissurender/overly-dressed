@@ -1,14 +1,13 @@
-import '../scss/ClothingItem.scss';
+import { Col, Image } from 'react-bootstrap';
 
-const ClothingItem = ({ name, price, imageUrl }: { name: string, price: number, imageUrl: string }) => {
+const ClothingItem = ({ price, name, imageUrl }: { price: number, name: string, imageUrl: string }) => {
     return (
-        <div className='clothing-item'>
-            <div className='image' style={{ backgroundImage: `url(${imageUrl})` }} />
-            <div className='clothing-footer'>
-                <span className='name'>{name}</span>
-                <span className='price'>{price}</span>
-            </div>
-        </div>
+        <Col lg={3} md={3} sm={6} xs={6}>
+            <Image src={imageUrl} fluid />
+            <div className="caption center-block">{name}</div>
+            <div className="caption center-block">{price}</div>
+            <p></p>
+        </Col>
     );
 };
 
