@@ -1,13 +1,15 @@
-import '../../scss/ClothingItem.scss';
+import '../scss/ClothingItem.scss';
 
 const ClothingItem = ({ name, price, imageUrl }: { name: string, price: number, imageUrl: string }) => {
-    <div className='clothing-item'>
-        <div className='image' style={{ backgroundImage: `url(${imageUrl})` }} />
-        <div className='clothing-footer'>
-            <span className='name'>{name}</span>
-            <span className='price'>{price}</span>
+    return (
+        <div className='clothing-item'>
+            <div className='image' style={{ backgroundImage: `url(${imageUrl})` }} />
+            <div className='clothing-footer'>
+                <span className='name'>{name}</span>
+                <span className='price'>{price}</span>
+            </div>
         </div>
-    </div>
+    );
 };
 
 export default ClothingItem;
