@@ -1,3 +1,6 @@
+import React from 'react';
+
+
 const AddToCartButton = ({ buttonText }: { buttonText: string }) => {
     return (
         <button type="button" className="btn btn-primary btn-lg">{buttonText}</button>

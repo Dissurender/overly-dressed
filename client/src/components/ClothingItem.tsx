@@ -1,3 +1,4 @@
+import React from 'react';
 import { Col, Image } from 'react-bootstrap';
 
 //Price should go to two decimal places.

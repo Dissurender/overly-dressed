@@ -1,4 +1,6 @@
 import Carousel from 'react-bootstrap/Carousel';
+import React from 'react';
+
 
 function ProductStaticCarousel() {
     //const [index, setIndex] = useState(0);

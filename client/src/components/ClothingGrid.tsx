@@ -1,3 +1,5 @@
+import React from 'react';
+
 import ClothingRow from "./ClothingRow";
 import { Container } from 'react-bootstrap';
 
