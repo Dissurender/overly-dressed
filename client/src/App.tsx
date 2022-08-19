@@ -5,12 +5,13 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import StorePage from './pages/StorePage';
 
+//            <Route path="*" element={<NotFound/>} /> for 404 pages.
 
 const App = () => {
     return (
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/storePage" element={<StorePage />} />
+            <Route path="/storePage/:id" element={<StorePage />} />
         </Routes>
     );
 };
