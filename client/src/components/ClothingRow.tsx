@@ -11,10 +11,10 @@ const ClothingRow = () => {
 
     return (
         <Row>
-            <ClothingItem price={templatePrice} name={templateName} imageUrl={templateImage} />
-            <ClothingItem price={templatePrice} name={templateName} imageUrl={templateImage} />
-            <ClothingItem price={templatePrice} name={templateName} imageUrl={templateImage} />
-            <ClothingItem price={templatePrice} name={templateName} imageUrl={templateImage} />
+            <ClothingItem price={templatePrice} name={"Adam's Manor"} imageUrl={templateImage} />
+            <ClothingItem price={templatePrice} name={"Swettheart and Bat Wings"} imageUrl={templateImage} />
+            <ClothingItem price={templatePrice} name={"Appliques Striped Pattern"} imageUrl={templateImage} />
+            <ClothingItem price={templatePrice} name={"JSK"} imageUrl={templateImage} />
         </Row>
     )
 }

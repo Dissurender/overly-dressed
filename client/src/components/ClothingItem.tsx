@@ -10,7 +10,6 @@ const ClothingItem = ({ price, name, imageUrl }: { price: number, name: string, 
 
     return (
         <Col lg={3} md={3} sm={6} xs={6}>
-            <p></p>
             <Image src={imageUrl} fluid />
             <div className="caption center-block">{name}</div>
             <div className="caption center-block currency">{priceToUSDCurrencyString()}</div>

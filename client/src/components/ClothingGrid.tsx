@@ -13,9 +13,17 @@ import { Container } from 'react-bootstrap';
 //Text should be clickable with a link to the item.
 //It should also append? Basically turn into ... after X characters.
 
+
+
 const ClothingGrid = () => {
     return (
         <Container>
+            <p></p>
+            <p></p>
+            <p></p>
+            <h1>What's Hot</h1>
+            <p></p>
+            <p></p>
             <ClothingRow />
             <ClothingRow />
         </Container >
