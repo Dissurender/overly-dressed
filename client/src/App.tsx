@@ -1,5 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/ClothingItem.scss';
+import './styles/Footer.scss';
+
 
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';

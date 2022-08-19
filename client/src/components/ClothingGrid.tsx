@@ -3,6 +3,7 @@ import React from 'react';
 import ClothingRow from "./ClothingRow";
 import { Container } from 'react-bootstrap';
 
+
 //Grab data from database later.
 //{ clothes }: { clothes: Array<String> } with a nexted array of string, number, string.
 //Redudancy in code can definitely be refactored.
