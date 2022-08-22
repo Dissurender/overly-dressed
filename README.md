@@ -21,6 +21,9 @@ TO-DO
 # Contributing
 We'd love to have you! Read the short [contributing guidelines](CONTRIBUTING.md) here!
 
+# Code of Conduct
+Please be kind to all and read our [Code of Conduct](CODE_OF_CONDUCT.md).
+
 # Live Version
 
 The page is not currently deployed. 
