@@ -1,0 +1,13 @@
+name: Bug Report
+description: Report a bug in the project.
+title: '[Bug]: '
+labels: 
+  - bug
+assignees:
+  - ApplePieAngel
+body:
+  - type: textarea
+    attributes:
+      label: Description
+      description: Add as many details as you'd like! More details about the problem the better!
+
