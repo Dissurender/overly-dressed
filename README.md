@@ -19,8 +19,7 @@ TO-DO
 # Installation
 
 # Contributing
-Find an feature you want to add to the project? Create an issue, and I'll review it!
-Then fork the repo, and make a pull request for review! I'd love anyone who shows any interest in the projects I'm working on!
+We'd love to have you! Read the short [contributing guidelines](CONTRIBUTING.md) here!
 
 # Live Version
 
