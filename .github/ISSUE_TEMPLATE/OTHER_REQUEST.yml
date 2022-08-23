@@ -1,0 +1,9 @@
+name: Improvement Request
+description: Found something you think can be improved? List it here!
+title: '[Improvement]:'
+assignees:
+  - ApplePieAngel
+body:
+  - type: textarea
+    attributes:
+      label: Describe whatever you'd like!
