@@ -2,23 +2,17 @@ const express = require('express');
 const dotenv = require('dotenv');
 const { application } = require('express');
 dotenv.config({ path: './config/config.env' });
-const server = express();
+const connectDB = require('./utils/db');
 const passport = require('passport');
 const session = require('express-session');
+
+connectDB();
+
+const server = express();
+
 const PORT = process.env.PORT || 5000;
 
-require('./config/passport')(passport)
 
-//Sessions
-server.use(session({
-    secret: '',
-    resave: false,
-    saveUnitia
-}))
-
-//Middleware
-server.use(passport.initialize)
-server.use(passport.session())
 server.use(express.urlencoded({ extended: true }))
 
 server.get('/', (req, res) => {
