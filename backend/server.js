@@ -1,26 +1,46 @@
-const express = require('express');
-const dotenv = require('dotenv');
-const { application } = require('express');
-dotenv.config({ path: './config/config.env' });
-const connectDB = require('./utils/db');
-const passport = require('passport');
-const session = require('express-session');
+const express = require('express')
+const app = express()
+const mongoose = require('mongoose')
+const passport = require('passport')
+const session = require('express-session')
+const MongoStore = require('connect-mongo')(session)
+const flash = require('express-flash')
+const logger = require('morgan')
+const connectDB = require('./config/database')
+const mainRoutes = require('./routes/main')
+const todoRoutes = require('./routes/todos')
 
-connectDB();
+require('dotenv').config({ path: './config/.env' })
 
-const server = express();
+// Passport config
+require('./config/passport')(passport)
 
-const PORT = process.env.PORT || 5000;
+connectDB()
 
-
-server.use(express.urlencoded({ extended: true }))
-
-server.get('/', (req, res) => {
-    res.json({
-        message: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..."
+app.set('view engine', 'ejs')
+app.use(express.static('public'))
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
+app.use(logger('dev'))
+// Sessions
+app.use(
+    session({
+        secret: 'keyboard cat',
+        resave: false,
+        saveUninitialized: false,
+        store: new MongoStore({ mongooseConnection: mongoose.connection }),
     })
-});
+)
 
+// Passport middleware
+app.use(passport.initialize())
+app.use(passport.session())
 
+app.use(flash())
 
-server.listen(PORT, console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`));
+app.use('/', mainRoutes)
+app.use('/todos', todoRoutes)
+
+app.listen(process.env.PORT, () => {
+    console.log('Server is running, you better catch it!')
+})    
