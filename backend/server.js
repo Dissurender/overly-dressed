@@ -2,8 +2,16 @@ const express = require('express');
 const dotenv = require('dotenv');
 const { application } = require('express');
 dotenv.config({ path: './config/config.env' });
+const connectDB = require('./utils/db');
+const passport = require('passport');
+const session = require('express-session');
+
+connectDB();
+
 const server = express();
+
 const PORT = process.env.PORT || 5000;
+
 
 server.use(express.urlencoded({ extended: true }))
 
