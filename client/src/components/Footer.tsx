@@ -3,11 +3,9 @@ import { Container } from 'react-bootstrap';
 
 const Footer = () => {
     return (
-        <div className='footer-copyright row-md-3'>
-            <Container>
-                <span>© {new Date().getFullYear()} Overly-Dressed</span>
-            </Container>
-        </div>
+        <Container className="footer-copyright p-5 bg-white text-right">
+            <span>© {new Date().getFullYear()} Overly-Dressed</span>
+        </Container>
     );
 };
 

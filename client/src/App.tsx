@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/ClothingItem.scss';
 import './styles/Footer.scss';
 import './styles/LoginForm.scss';
-import './styles/Navigation.scss';
+
 
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
