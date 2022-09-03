@@ -11,6 +11,7 @@ const Home = () => {
             <Navigation />
             <SlideShowCarousel />
             <ClothingGrid />
+            <ClothingGrid />
             <Footer />
         </div>
     );
