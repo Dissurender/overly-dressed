@@ -1,12 +1,21 @@
 import React, { useState } from "react";
-import { FaGoogle } from "react-icons/fa";
 
 const Auth = () => {
     let [authMode, setAuthMode] = useState("signin")
+    const [data, setData] = React.useState(null);
+
 
     const changeAuthMode = () => {
         setAuthMode(authMode === "signin" ? "signup" : "signin")
     }
+
+    React.useEffect(() => {
+        fetch("/api")
+            .then((res) => res.json())
+            .then((data) => {
+                return setData(data.message);
+            });
+    }, []);
 
     //For signing in
     if (authMode === "signin") {
@@ -16,6 +25,7 @@ const Auth = () => {
                     <div className="Auth-form-content">
                         <h3 className="Auth-form-title">Sign In</h3>
                         <div className="text-center">
+                            <p>{!data ? "Loading..." : data}</p>
                             Not registered yet?{" "}
                             <span className="link-primary" onClick={changeAuthMode}>
                                 Sign Up
@@ -44,7 +54,7 @@ const Auth = () => {
                         </div>
                         <div className="d-grid gap-2 mt-3">
                             <button type="submit" className="btn btn-danger google-login">
-                                <FaGoogle /> <span className="google-text">Log In With Google</span>
+                                <span className="google-text">Log In With Google</span>
                             </button>
                         </div>
                         <p className="text-center mt-2">
