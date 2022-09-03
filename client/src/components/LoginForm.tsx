@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { FaGoogle } from "react-icons/fa";
 
 const Auth = () => {
     let [authMode, setAuthMode] = useState("signin")
@@ -8,6 +8,7 @@ const Auth = () => {
         setAuthMode(authMode === "signin" ? "signup" : "signin")
     }
 
+    //For signing in
     if (authMode === "signin") {
         return (
             <div className="Auth-form-container">
@@ -41,20 +42,25 @@ const Auth = () => {
                                 Submit
                             </button>
                         </div>
+                        <div className="d-grid gap-2 mt-3">
+                            <button type="submit" className="btn btn-danger google-login">
+                                <FaGoogle /> <span className="google-text">Log In With Google</span>
+                            </button>
+                        </div>
                         <p className="text-center mt-2">
-                            Forgot <a href="#">password?</a>
+                            Forgot <a href="/">password?</a>
                         </p>
                     </div>
                 </form>
             </div>
         )
     }
-
+    //For signing up
     return (
         <div className="Auth-form-container">
             <form className="Auth-form">
                 <div className="Auth-form-content">
-                    <h3 className="Auth-form-title">Sign In</h3>
+                    <h3 className="Auth-form-title">Sign Up</h3>
                     <div className="text-center">
                         Already registered?{" "}
                         <span className="link-primary" onClick={changeAuthMode}>
@@ -91,7 +97,7 @@ const Auth = () => {
                         </button>
                     </div>
                     <p className="text-center mt-2">
-                        Forgot <a href="#">password?</a>
+                        Forgot <a href="/">password?</a>
                     </p>
                 </div>
             </form>
