@@ -23,5 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 
 TODO.md
-/config/config.env
-/config/.env
+config/.env
