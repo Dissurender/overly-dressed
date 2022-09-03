@@ -19,12 +19,7 @@ import { Container } from 'react-bootstrap';
 const ClothingGrid = () => {
     return (
         <Container>
-            <p></p>
-            <p></p>
-            <p></p>
             <h1>What's Hot</h1>
-            <p></p>
-            <p></p>
             <ClothingRow />
             <ClothingRow />
         </Container >
