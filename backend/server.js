@@ -6,6 +6,7 @@ const session = require('express-session')
 const MongoStore = require('connect-mongo')
 const flash = require('express-flash')
 const logger = require('morgan')
+const authRoute = require("./routes/auth")
 const connectDB = require('./config/database')
 const { env } = require('process')
 
@@ -41,6 +42,7 @@ app.get("/api", (req, res) => {
     res.json({ message: 'Hello from server!' });
 })
 
+app.use('/auth', authRoute);
 
 
 

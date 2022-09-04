@@ -1,16 +1,9 @@
-//import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import React from 'react';
 
 
 
 function SlideShowCarousel() {
-    //const [index, setIndex] = useState(0);
-
-    /*const handleSelect = (selectedIndex: number, e: any) => {
-        setIndex(selectedIndex);
-    };*/
-
     return (
         <Carousel>
             <Carousel.Item interval={3000}>

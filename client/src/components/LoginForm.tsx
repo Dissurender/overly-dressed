@@ -9,6 +9,7 @@ const Auth = () => {
         setAuthMode(authMode === "signin" ? "signup" : "signin")
     }
 
+
     React.useEffect(() => {
         fetch("/api")
             .then((res) => res.json())
