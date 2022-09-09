@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const GoogleUser = new mongoose.Schema({
     googleId: {
         type: String,
-        required: true
+        required: true,
+        unique: true,
     },
     displayName: {
         type: String,
@@ -12,6 +13,10 @@ const GoogleUser = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now
+    },
+    updatedAt: {
+        type: Date,
+        default: Date.now,
     }
 })
 
