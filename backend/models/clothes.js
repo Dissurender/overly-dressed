@@ -2,7 +2,7 @@ const Mongoose = require('mongoose');
 const { Schema } = Mongoose;
 
 const ClothesSchema = new Schema({
-    id: {
+    _id: {
         type: String,
         required: true,
         unique: true,
@@ -24,5 +24,7 @@ const ClothesSchema = new Schema({
         required: true,
     }
 });
+
+
 
 module.exports = Mongoose.model('Clothes', ClothesSchema);
