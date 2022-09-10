@@ -2,6 +2,11 @@ const Mongoose = require('mongoose');
 const { Schema } = Mongoose;
 
 const ClothesSchema = new Schema({
+    id: {
+        type: Number,
+        required: true,
+        unique: true,
+    },
     name: {
         type: String,
         required: true,
