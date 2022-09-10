@@ -3,7 +3,7 @@ const { Schema } = Mongoose;
 
 const FavoriteSchema = new Schema({
     userId: {
-        type: Number,
+        type: String,
         required: true,
     },
     clothesId: {
