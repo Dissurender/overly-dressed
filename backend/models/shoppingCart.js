@@ -2,11 +2,6 @@ const Mongoose = require('mongoose');
 const { Schema } = Mongoose;
 
 const ShoppingCartSchema = new Schema({
-    id: {
-        type: String,
-        required: true,
-        unique: true,
-    },
     user_id: {
         type: String,
         required: true,
