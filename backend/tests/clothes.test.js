@@ -41,7 +41,6 @@ describe("Clothes model", () => {
             const savedClothesWithoutRequiredField = await clothesWithoutRequiredField.save();
         } catch (error) {
             err = error;
-            console.log(err);
         }
         expect(err).toBeInstanceOf(mongoose.Error.ValidationError);
         expect(err.errors.name).toBeDefined();
