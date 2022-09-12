@@ -22,7 +22,7 @@ afterAll(async () => {
     await db.dropDatabase();
 });
 
-describe("Clothes model", () => {
+describe("Given the Clothes model schema", () => {
     it("creates and saves a clothes object successfully", async () => {
         const validClothesObject = new Clothes(clothesData);
         const savedClothes = await validClothesObject.save();

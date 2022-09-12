@@ -3,7 +3,16 @@ const clothes = require('../models/clothes');
 module.exports = {
     getClothes: async (req, res) => {
         try {
-            const clothesItems = await clothes.find({ id: req.query.clothesId });
+            if (req.query.clothesId === undefined) {
+                return res.json({ message: 'No query of clothesId found.' });
+            }
+            if (Number.isInteger(Number(req.query.clothesId)) === false) {
+                return res.json({ message: 'Invalid query of clothesId.' });
+            }
+            const clothesItems = await clothes.find({ id: Number(req.query.clothesId) });
+            if (clothesItems.length === 0) {
+                return res.json({ message: `No clothes found with id of ${req.query.clothesId}` });
+            }
             return res.json({ clothes: clothesItems });
         } catch (err) {
             console.log(err);
