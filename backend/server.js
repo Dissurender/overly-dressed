@@ -1,6 +1,7 @@
 const express = require('express')
-const loadClothesRoutes = require('./routes/clothes');
 const app = express()
+
+const loadClothesRoutes = require('./routes/clothes');
 const mongoose = require('mongoose')
 const passport = require('passport')
 const session = require('express-session')

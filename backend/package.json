@@ -4,8 +4,7 @@
   "description": "Express backend for overly-dressed",
   "main": "server.js",
   "scripts": {
-    "test": "jest --runInBand --coverage ./tests",
-    "seed": "node seeders/seed-clothes.js"
+    "test": "jest --runInBand --coverage ./tests"
   },
   "author": "ApplePieAngel",
   "license": "ISC",

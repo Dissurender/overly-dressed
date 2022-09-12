@@ -40,4 +40,3 @@ seedDBWithClothes().then(() => {
     mongoose.disconnect();
 })
 
-

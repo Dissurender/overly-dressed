@@ -28,6 +28,9 @@ module.exports = {
             return res.json({ error: err });
         }
     },
+    editName: async (req, res) => {
+
+    },
     getRoot: async (req, res) => {
         return res.json({ server_status: 'active' });
     }
