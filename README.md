@@ -15,8 +15,13 @@ It's built with React as the frontend.
 * RESTful APIs for Clothing Data.
 * Probabably a lot more!
 
-# Config Environment Variables
-Reference the .env.example file for everything you need!
+# Setup
+* Make sure you have Node installed. 
+* Run npm install
+* Reference the .env.example file to setup the environment variables. Then put your .env in the backend/config
+* Pre-populate the data by running the seeders. 
+* Run the tests with npm test
+* Run the server with npm start
 
 # Contributing
 We'd love to have you! Read the short [contributing guidelines](CONTRIBUTING.md) here!
