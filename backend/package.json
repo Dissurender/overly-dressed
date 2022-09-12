@@ -4,7 +4,7 @@
   "description": "Express backend for overly-dressed",
   "main": "server.js",
   "scripts": {
-    "test": "nyc jest --runInBand ./tests"
+    "test": "jest --runInBand --coverage ./tests"
   },
   "author": "ApplePieAngel",
   "license": "ISC",
@@ -28,7 +28,6 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.19",
-    "nyc": "^15.1.0",
     "supertest": "^6.2.4"
   }
 }

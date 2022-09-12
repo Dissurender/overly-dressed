@@ -19,7 +19,7 @@ module.exports = {
             return res.json({ error: err });
         }
     },
-    getNone: async (req, res) => {
-        return res.json({ message: 'testing' });
+    getRoot: async (req, res) => {
+        return res.json({ server_status: 'active' });
     }
 }
