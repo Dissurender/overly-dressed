@@ -1,3 +1,5 @@
+require('dotenv').config({ path: '../config/.env' })
+const mongoose = require('mongoose');
 const connectDB = require('../config/db');
 const { faker } = require('@faker-js/faker'); // https://fakerjs.dev/api/commerce.html#product
 const Clothes = require('../models/clothes');
@@ -29,10 +31,13 @@ const clothesData = [
 ];
 
 const seedDBWithClothes = async () => {
-    connectDB(); //URI isn't being passed in?
+    connectDB();
     await Clothes.deleteMany({});
     await Clothes.create(clothesData);
 };
 
+seedDBWithClothes().then(() => {
+    mongoose.disconnect();
+})
 
-seedDBWithClothes();
+
