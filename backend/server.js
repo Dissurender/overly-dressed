@@ -1,4 +1,5 @@
 const express = require('express')
+const loadClothesRoutes = require('./routes/clothes');
 const app = express()
 const mongoose = require('mongoose')
 const passport = require('passport')
@@ -7,8 +8,8 @@ const MongoStore = require('connect-mongo')
 const flash = require('express-flash')
 const logger = require('morgan')
 const authRoute = require("./routes/auth")
-const connectDB = require('./config/database')
-const { env } = require('process')
+const connectDB = require('./config/db')
+const { env } = require('process');
 
 require('dotenv').config({ path: './config/.env' })
 
@@ -30,20 +31,14 @@ app.use(
         store: MongoStore.create({ mongoUrl: env.MONGO_URI }),
     })
 )
-
 // Passport middleware
 app.use(passport.initialize())
 app.use(passport.session())
 
 app.use(flash())
 
-
-app.get("/api", (req, res) => {
-    res.json({ message: 'Hello from server!' });
-})
-
-app.use('/auth', authRoute);
-
+//Routing
+loadClothesRoutes(app);
 
 
 app.listen(process.env.PORT, () => {

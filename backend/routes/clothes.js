@@ -1,9 +1,9 @@
-const express = require('express');
-const router = express.Router();
 const clothesController = require('../controllers/clothes');
 
-router.get('/api/clothes/:clothesId', clothesController.getClothes)
+const loadClothesRoutes = (app, controller = clothesController) => {
+    //app.get('/api/clothes/:clothesId', controller.getClothes);
+    app.get('/', controller.getNone);
+}
 
 
-
-module.exports = router
+module.exports = loadClothesRoutes;
