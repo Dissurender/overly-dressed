@@ -26,10 +26,10 @@ It's built with React as the frontend.
 
 # .env.example
 ```Backend```
-PORT = 2121
-MONGO_URI =
-GOOGLE_CLIENT_ID = 
-GOOGLE_CLIENT_SECRET = 
+* PORT = 2121
+* MONGO_URI =
+* GOOGLE_CLIENT_ID = 
+* GOOGLE_CLIENT_SECRET = 
 
 # Contributing
 We'd love to have you! Read the short [contributing guidelines](CONTRIBUTING.md) here!
