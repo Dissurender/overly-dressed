@@ -4,10 +4,10 @@ module.exports = {
     getClothes: async (req, res) => {
         try {
             if (req.query.clothesId === undefined) {
-                return res.json({ message: 'No query of clothesId found.' });
+                return res.json({ message: 'No query of clothesId found' });
             }
             if (Number.isInteger(Number(req.query.clothesId)) === false) {
-                return res.json({ message: 'Invalid query of clothesId.' });
+                return res.json({ message: 'Invalid query of clothesId' });
             }
             const clothesItems = await clothes.find({ id: Number(req.query.clothesId) });
             if (clothesItems.length === 0) {

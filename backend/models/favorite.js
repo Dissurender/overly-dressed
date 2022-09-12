@@ -2,12 +2,14 @@ const Mongoose = require('mongoose');
 const { Schema } = Mongoose;
 
 const FavoriteSchema = new Schema({
-    userId: {
-        type: String,
+    user: {
+        type: mongoose.Types.ObjectId,
+        ref: 'User',
         required: true,
     },
-    clothesId: {
-        type: String,
+    clothes: {
+        type: mongoose.Types.ObjectId,
+        ref: 'Clothes',
         required: true,
     }
 });

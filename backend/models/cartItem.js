@@ -2,8 +2,9 @@ const Mongoose = require('mongoose');
 const { Schema } = Mongoose;
 
 const CartItemSchema = new Schema({
-    clothesId: {
-        type: String,
+    clothes: {
+        type: mongoose.Types.ObjectId,
+        ref: 'Clothes',
         required: true,
     },
     quantity: {

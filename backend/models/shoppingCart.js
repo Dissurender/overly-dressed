@@ -3,7 +3,8 @@ const { Schema } = Mongoose;
 
 const ShoppingCartSchema = new Schema({
     user_id: {
-        type: String,
+        type: mongoose.Types.ObjectId,
+        ref: 'User',
         required: true,
     },
     purchasedItems: {

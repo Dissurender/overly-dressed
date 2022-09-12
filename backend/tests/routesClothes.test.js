@@ -9,10 +9,22 @@ describe("Given the routes for the clothes route.", () => {
         expect(statusCode).toBe(200);
         expect(body.server_status).toBe("active");
     });
-    it("should error if the clothesId aren't passed in", async () => {
-        const clothesId = 1;
-        await supertest(app).get(`/api/clothes/?clothesId=${clothesId}`).expect(200);
-        await supertest(app).get(`/api/clothes/${clothesId}`).expect(404);
+    it("should return an error message if the clothesId is not a valid parameter (Float)", async () => {
+        let clothesId = 34.22;
+        const { body, statusCode } = await supertest(app).get(`/api/clothes/?clothesId=${clothesId}`);
+        expect(statusCode).toBe(200);
+        expect(body.message).toBe("Invalid query of clothesId");
+    });
+    it("should return an error message if the clothesId is not a valid parameter (String)", async () => {
+        let clothesId = 'x';
+        const { body, statusCode } = await supertest(app).get(`/api/clothes/?clothesId=${clothesId}`);
+        expect(statusCode).toBe(200);
+        expect(body.message).toBe("Invalid query of clothesId");
+    });
+    it("should return an error message if the clothesId is undefined", async () => {
+        const { body, statusCode } = await supertest(app).get(`/api/clothes/`);
+        expect(statusCode).toBe(200);
+        expect(body.message).toBe('No query of clothesId found');
     });
 });
 
