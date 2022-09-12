@@ -34,3 +34,5 @@ const seedDBWithClothes = async () => {
     await Clothes.create(clothesData);
 };
 
+
+seedDBWithClothes();
